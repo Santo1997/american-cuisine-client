@@ -1,5 +1,6 @@
 import React from "react";
 import ItmData from "./ItmData";
+import { Link } from "react-router-dom";
 
 const Items = ({ recipies }) => {
   const ShowRecipies = recipies.slice(0, 4);
@@ -14,7 +15,9 @@ const Items = ({ recipies }) => {
         ))}
       </div>
       <div className="text-center mt-5">
-        <button className="btn btn-primary text-xl">Show All</button>
+        <Link to="/itms">
+          <button className="btn btn-primary text-xl">Show All</button>
+        </Link>
       </div>
     </div>
   );

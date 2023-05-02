@@ -30,7 +30,9 @@ const CartInfo = (props) => {
         </div>
         <p>{details}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Details</button>
+          <Link to={`/details/${recipe_id}`}>
+            <button className="btn btn-primary">Details</button>
+          </Link>
         </div>
       </div>
     </div>

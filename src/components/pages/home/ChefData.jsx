@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ChefData = (props) => {
   const { id, name, img, experience, num_recipes, likes } = props.chef;
@@ -25,7 +26,9 @@ const ChefData = (props) => {
             </li>
           </ul>
           <div className="text-center">
-            <button className="btn btn-primary btn-sm">View Recipe</button>
+            <Link to={`/chef_details/${id}`}>
+              <button className="btn btn-primary btn-sm">View Recipe</button>
+            </Link>
           </div>
         </div>
       </div>

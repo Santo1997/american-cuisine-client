@@ -10,6 +10,7 @@ import Login from "./components/pages/login/Login.jsx";
 import Signup from "./components/pages/signup/Signup.jsx";
 import ChefDetails from "./components/pages/chefDetails/ChefDetails.jsx";
 import Error from "./components/pages/error/Error.jsx";
+import Blog from "./components/pages/blog/Blog.jsx";
 import { chefsAndRecipies } from "./components/loader/DataLoader.js";
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/itms",
         element: <Itms />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
       },
       {
         path: "/details/:id",

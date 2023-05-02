@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const RecentItm = (props) => {
   const { recipe_id, image_url, name, details, rating } = props.recentRecipe;
@@ -18,7 +19,9 @@ const RecentItm = (props) => {
         </p>
         <p>{details}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary btn-sm">Details</button>
+          <Link to={`/details/${recipe_id}`}>
+            <button className="btn btn-primary btn-sm">Details</button>
+          </Link>
         </div>
       </div>
     </div>
