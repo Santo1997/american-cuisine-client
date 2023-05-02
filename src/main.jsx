@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import "./index.css";
 import Home from "./components/pages/home/Home.jsx";
 import Itms from "./components/pages/itms/Itms.jsx";
+import Details from "./components/pages/details/Details.jsx";
 import { chefsAndRecipies } from "./components/loader/DataLoader.js";
 
 const router = createBrowserRouter([
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
       {
         path: "/itms",
         element: <Itms />,
+      },
+      {
+        path: "/details/:id",
+        element: <Details />,
+        loader: ({ params }) => params.id,
       },
     ],
   },
