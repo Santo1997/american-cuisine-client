@@ -6,13 +6,17 @@ import "./index.css";
 import Home from "./components/pages/home/Home.jsx";
 import Itms from "./components/pages/itms/Itms.jsx";
 import Details from "./components/pages/details/Details.jsx";
+import Login from "./components/pages/login/Login.jsx";
+import Signup from "./components/pages/signup/Signup.jsx";
 import ChefDetails from "./components/pages/chefDetails/ChefDetails.jsx";
+import Error from "./components/pages/error/Error.jsx";
 import { chefsAndRecipies } from "./components/loader/DataLoader.js";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error />,
     loader: chefsAndRecipies,
     children: [
       {
@@ -27,6 +31,14 @@ const router = createBrowserRouter([
         path: "/details/:id",
         element: <Details />,
         loader: ({ params }) => params.id,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
       {
         path: "/chef_details/:id",
