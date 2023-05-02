@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Slider from "./Slider";
 import Items from "./Items";
 import Chef from "./Chef";
+import FilterCart from "../../layouts/FilterCart";
 import { ChefContext, RecipeContext } from "../../../App";
 import RecentItm from "./RecentItm";
 
@@ -30,6 +31,7 @@ const Home = () => {
             ))}
           </div>
         </div>
+        <FilterCart />
       </div>
     </div>
   );
