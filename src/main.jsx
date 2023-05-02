@@ -3,11 +3,20 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
+import Home from "./components/pages/home/Home.jsx";
+import { chefsAndRecipies } from "./components/loader/DataLoader.js";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    loader: chefsAndRecipies,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+    ],
   },
 ]);
 
