@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Activelink from "./Activelink";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from "react-router-dom";
+import "./header.css";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
+  const [isHovered, setIsHovered] = useState(false);
+  // console.log(user);
   const handleLogOut = () => {
     logOut()
       .then(() => {})
@@ -75,24 +77,28 @@ const Header = () => {
               <li>
                 <button onClick={handleLogOut}>LogOut</button>
               </li>
-              <li>
-                <Activelink>
-                  {user.photoURL && (
-                    <>
-                      <span>
-                        <div className="avatar online inline">
-                          <div className="w-7 rounded-full overflow-hidden">
-                            <img src={user.photoURL} />
-                          </div>
-                        </div>
-                      </span>
-                    </>
-                  )}
+              <li className="hover:disabled">
+                {user.photoURL && (
+                  <>
+                    <div
+                      onMouseEnter={() => setIsHovered(true)}
+                      onMouseLeave={() => setIsHovered(false)}
+                      className="avatar inline relative  px-10 py-2 "
+                    >
+                      <div className="w-9  rounded-full overflow-hidden">
+                        <img src={user.photoURL} />
+                        <span>{user.displayName}</span>
+                      </div>
+                      {isHovered && (
+                        <p className="hoverPoint  p-1 text-sm  rounded inline text-center text-black font-bold bg-gray-300">
+                          {user.displayName}
+                        </p>
+                      )}
+                    </div>
+                  </>
+                )}
 
-                  <span>
-                    {user.displayName == null ? user.email : user.displayName}
-                  </span>
-                </Activelink>
+                <span>{user.displayName == null && user.email}</span>
               </li>
             </>
           ) : (

@@ -14,13 +14,9 @@ const ItmData = (props) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title text-2xl">{name}</h2>
-        <div className="grid grid-cols-2 ">
-          <p className="inline-block w-fit ">
-            Rating: <span className=" text-green-500">{rating}</span>
-          </p>
-          <button className="inline btn btn-sm w-fit">Add Fav</button>
-        </div>
-
+        <p className="inline-block w-fit ">
+          Rating: <span className=" text-green-500">{rating}</span>
+        </p>
         <p>{details}</p>
         <div className="card-actions justify-end">
           <Link to={`/details/${recipe_id}`}>

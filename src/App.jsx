@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/base/header";
 import { Outlet, useLoaderData } from "react-router-dom";
 import Footer from "./components/base/Footer";
+import { Toaster } from "react-hot-toast";
 
 export const RecipeContext = createContext([]);
 export const ChefContext = createContext([]);
@@ -18,6 +19,7 @@ function App() {
           <div className=" m-3 rounded-xl overflow-hidden ">
             <Outlet />
           </div>
+          <Toaster />
           <Footer />
         </ChefContext.Provider>
       </RecipeContext.Provider>
