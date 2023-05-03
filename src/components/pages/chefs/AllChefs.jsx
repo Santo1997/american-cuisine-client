@@ -30,50 +30,6 @@ const AllChefs = (props) => {
             </li>
           </ul>
           <div className="text-center mt-5">
-            <button
-              disabled={isFavorited}
-              className="btn btn-sm inline w-fit mb-3 btn-otline btn-info"
-            >
-              {isFavorited ? (
-                <>
-                  <span className="text-green-600">Added</span>
-
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6 text-green-600 inline ms-2"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </>
-              ) : (
-                <>
-                  <span>Add Faourite</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6 inline ms-2"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </>
-              )}
-            </button>
-
             <button className="btn btn-sm btn-primary text-base">
               <Link to={`/chef_details/${id}`}>View Repipe</Link>
             </button>
