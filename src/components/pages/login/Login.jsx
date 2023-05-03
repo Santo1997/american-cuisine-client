@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Login = () => {
+  const { user, signIn } = useContext(AuthContext);
+  const [err, setErr] = useState("");
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const pass = form.pass.value;
+
+    signIn(email, pass)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        form.reset();
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+  };
+
   return (
     <div className="hero min-h-[calc(100vh-300px)] bg-base-200 ">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -14,13 +36,14 @@ const Login = () => {
           </p>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form className="card-body">
+          <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
                 type="text"
+                name="email"
                 placeholder="email"
                 className="input input-bordered"
               />
@@ -31,6 +54,7 @@ const Login = () => {
               </label>
               <input
                 type="text"
+                name="pass"
                 placeholder="password"
                 className="input input-bordered"
               />
@@ -41,7 +65,9 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control m-5">
-              <button className="btn btn-primary">Login</button>
+              <button type="submit" className="btn btn-primary">
+                Login
+              </button>
             </div>
             <p>
               Need an account?
