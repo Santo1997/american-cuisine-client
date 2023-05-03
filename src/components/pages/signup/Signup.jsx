@@ -8,6 +8,7 @@ const Signup = () => {
 
   const handleRegister = (event) => {
     event.preventDefault();
+    setErr("");
     const form = event.target;
     const userName = form.username.value;
     const email = form.email.value;
@@ -27,14 +28,9 @@ const Signup = () => {
   };
   return (
     <div className="hero min-h-[calc(100vh-300px)] bg-base-200 ">
-      <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero-content flex-col w-4/5">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Register now!</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
+          <h1 className="text-5xl font-bold mb-10">Register now!</h1>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleRegister} className="card-body">
@@ -54,10 +50,11 @@ const Signup = () => {
                 <span className="label-text">Email</span>
               </label>
               <input
-                type="text"
+                type="email"
                 name="email"
                 placeholder="email"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -65,10 +62,11 @@ const Signup = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="text"
+                type="password"
                 name="password"
                 placeholder="password"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -80,12 +78,14 @@ const Signup = () => {
                 name="photo"
                 placeholder="Photo URL"
                 className="input input-bordered"
+                required
               />
-              <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
-              </label>
+
+              {err && (
+                <>
+                  <p className="text-sm text-red-600 mt-5">{err}</p>
+                </>
+              )}
             </div>
             <div className="form-control m-5 ">
               <button className="btn btn-primary">Login</button>
