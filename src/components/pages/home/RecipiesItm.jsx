@@ -4,13 +4,10 @@ import { Link } from "react-router-dom";
 const RecipiesItm = (props) => {
   const { recipe_id, image_url, name, details, rating } = props.itms;
 
-  let img =
-    "https://thumbs.dreamstime.com/b/spices-open-recipe-book-space-text-selection-cooking-blank-pages-53759813.jpg";
-
   return (
     <div className="card card-compact w-auto bg-base-100 shadow-xl">
       <figure>
-        <img src={img} />
+        <img src={image_url} className="w-full h-fit" />
       </figure>
       <div className="card-body">
         <h2 className="card-title text-2xl">{name}</h2>

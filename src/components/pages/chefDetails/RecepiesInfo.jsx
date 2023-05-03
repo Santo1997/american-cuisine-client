@@ -20,15 +20,12 @@ const RecepiesInfo = (props) => {
     cooking_method,
   } = props.recipe;
 
-  let img =
-    "https://thumbs.dreamstime.com/b/spices-open-recipe-book-space-text-selection-cooking-blank-pages-53759813.jpg";
-
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl h-auto relative">
       <figure>
-        <img src={img} className="w-full h-full" />
+        <img src={image_url} className="w-96 h-full" />
       </figure>
-      <div className="card-body">
+      <div className="card-body w-full">
         <h2 className="card-title">
           {name}
           <div className="badge badge-secondary"> rating: {rating}</div>
@@ -37,16 +34,20 @@ const RecepiesInfo = (props) => {
           </button>
         </h2>
         <span>{details}</span>
-        <h3 className="text-xl underline">Ingredients</h3>
-        <ul className="list-disc list-inside">
-          {ingredients.map((itm, index) => (
-            <li key={index}>{itm}</li>
-          ))}
-        </ul>
-        <p className="w-4/5">
-          <strong className="underline">Cooking method:</strong>
-          <span> {cooking_method}</span>
-        </p>
+
+        <div className="grid grid-cols-3 items-start">
+          <ul className="list-disc list-inside ">
+            <h3 className="text-xl underline">Ingredients</h3>
+            {ingredients.map((itm, index) => (
+              <li key={index}>{itm}</li>
+            ))}
+          </ul>
+          <p className="col-span-2 ">
+            <h3 className="text-xl underline inline">Cooking method:</h3>
+            <br />
+            <span> {cooking_method}</span>
+          </p>
+        </div>
         <div className="card-actions justify-end absolute bottom-4 right-10">
           <button className="btn btn-primary">
             <Link to={`/details/${recipe_id}`}>Details</Link>

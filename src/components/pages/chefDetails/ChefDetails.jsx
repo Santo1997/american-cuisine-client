@@ -24,13 +24,11 @@ const ChefDetails = () => {
     (itm) => itm.chefs_name.chef1 == name || itm.chefs_name.chef2 === name
   );
 
-  let imgs =
-    "https://nationaltoday.com/wp-content/uploads/2021/07/shutterstock_1518533924-min.jpg";
   return (
     <div>
       <div className="hero place-items-start bg-base-200 w-fit p-5">
         <div className="hero-content flex-col lg:flex-row items-start">
-          <img src={imgs} className="w-fit h-96" />
+          <img src={img} className="w-fit h-96" />
           <div>
             <h1 className="text-3xl font-bold">{name}</h1>
             <ul className="list-disc list-inside ms-10 my-4">

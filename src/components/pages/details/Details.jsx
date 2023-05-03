@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 
 const Details = () => {
   let recipeId = useParams().id;
-  //const [loader, setLoader] = useState();
   const [recipe, setRecipe] = useState("");
 
   useEffect(() => {

@@ -4,14 +4,11 @@ const DetailsInfo = (props) => {
   const { image_url, name, details, cooking_method, ingredients, rating } =
     props.recipe;
 
-  let img =
-    "https://thumbs.dreamstime.com/b/spices-open-recipe-book-space-text-selection-cooking-blank-pages-53759813.jpg";
-
   return (
     <div className="col-span-2">
       <h1 className="text-3xl">{name}</h1>
 
-      <img src={img} className="rounded-md ms-10 mt-5 mb-2 w-4/5" />
+      <img src={image_url} className="rounded-md ms-10 mt-5 mb-2 w-4/5" />
 
       <ul className="grid grid-cols-5 justify-items-center mb-4">
         <li>

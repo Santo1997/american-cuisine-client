@@ -1,23 +1,33 @@
 import React from "react";
 
 const SliderSection = () => {
-  let img =
-    "https://thumbs.dreamstime.com/b/spices-open-recipe-book-space-text-selection-cooking-blank-pages-53759813.jpg";
   return (
     <>
       <div className="h-[calc(100vh-35vh)]">
         <div className="carousel h-full">
           <div id="item1" className="carousel-item w-full">
-            <img src={img} className="w-full" />
+            <img
+              src="https://i.ibb.co/FwkF9W1/09-COOKING-CHICKENWINGS2-super-Jumbo.jpg"
+              className="w-full"
+            />
           </div>
           <div id="item2" className="carousel-item w-full">
-            <img src={img} className="w-full" />
+            <img
+              src="https://i.ibb.co/VBcgJ97/Classic-Reuben-Sandwich-Recipe-326387597-web-1024x655.jpg"
+              className="w-full"
+            />
           </div>
           <div id="item3" className="carousel-item w-full">
-            <img src={img} className="w-full" />
+            <img
+              src="https://i.ibb.co/PFGcCGx/limes-58312-2.jpg"
+              className="w-full"
+            />
           </div>
           <div id="item4" className="carousel-item w-full">
-            <img src={img} className="w-full" />
+            <img
+              src="https://i.ibb.co/4TL6y3C/hero-1-0.jpg"
+              className="w-full"
+            />
           </div>
         </div>
         <div className="flex justify-center w-full py-2 gap-2">

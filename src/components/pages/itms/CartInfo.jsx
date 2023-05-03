@@ -12,15 +12,12 @@ const CartInfo = (props) => {
     rating,
   } = props.recipe;
 
-  let img =
-    "https://thumbs.dreamstime.com/b/spices-open-recipe-book-space-text-selection-cooking-blank-pages-53759813.jpg";
-
   return (
-    <div className="card lg:card-side bg-base-100 shadow-xl h-72">
+    <div className="card lg:card-side bg-base-100 shadow-xl h-fit">
       <figure>
-        <img src={img} className="w-96 h-full" />
+        <img src={image_url} className="w-full h-full" />
       </figure>
-      <div className="card-body">
+      <div className="card-body w-full">
         <h2 className="card-title text-2xl">{name}</h2>
         <p className="inline-block w-fit ">
           Rating: <span className=" text-green-500">{rating}</span>

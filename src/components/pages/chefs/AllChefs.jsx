@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 
 const AllChefs = (props) => {
   const { id, name, img, experience, num_recipes, likes } = props.allchefs;
-  let imgs =
-    "https://nationaltoday.com/wp-content/uploads/2021/07/shutterstock_1518533924-min.jpg";
+
   const [isFavorited, setIsFavorited] = useState(false);
 
   return (
     <div className="card w-full bg-base-100 shadow-xl h-96 border">
       <figure>
-        <img src={imgs} className="h-full w-full" />
+        <img src={img} className="h-full w-full" />
       </figure>
       <div className="card-body p-3">
         <div>
