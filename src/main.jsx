@@ -13,6 +13,7 @@ import Error from "./components/pages/error/Error.jsx";
 import Blog from "./components/pages/blog/Blog.jsx";
 import { chefsAndRecipies } from "./components/loader/DataLoader.js";
 import AuthProvider from "./providers/AuthProvider.jsx";
+import PrivateRoutes from "./components/routes/PrivateRoutes.jsx";
 
 const router = createBrowserRouter([
   {
@@ -48,7 +49,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/chef_details/:id",
-        element: <ChefDetails />,
+        element: (
+          <PrivateRoutes>
+            <ChefDetails />
+          </PrivateRoutes>
+        ),
         loader: ({ params }) => params.id,
       },
     ],

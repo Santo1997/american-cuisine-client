@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
@@ -10,6 +10,9 @@ const Login = () => {
   const { user, signIn, handleGoogleSignIn, handleGithubSignIn } =
     useContext(AuthContext);
   const [err, setErr] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -21,8 +24,8 @@ const Login = () => {
     signIn(email, pass)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
         form.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -33,10 +36,12 @@ const Login = () => {
 
   const googleHandle = () => {
     handleGoogleSignIn(googleProvider);
+    navigate(from, { replace: true });
   };
 
   const githubHandle = () => {
     handleGithubSignIn(githubProvider);
+    navigate(from, { replace: true });
   };
 
   return (
