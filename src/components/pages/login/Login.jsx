@@ -1,12 +1,14 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 const Login = () => {
-  const { user, signIn, handleGoogleSignIn } = useContext(AuthContext);
+  const { user, signIn, handleGoogleSignIn, handleGithubSignIn } =
+    useContext(AuthContext);
   const [err, setErr] = useState("");
 
   const handleLogin = (event) => {
@@ -33,6 +35,10 @@ const Login = () => {
     handleGoogleSignIn(googleProvider);
   };
 
+  const githubHandle = () => {
+    handleGithubSignIn(githubProvider);
+  };
+
   return (
     <div className="hero min-h-[calc(100vh-300px)] bg-base-200 ">
       <div className="hero-content flex-col w-3/6">
@@ -46,7 +52,7 @@ const Login = () => {
                 <span className="label-text">Email</span>
               </label>
               <input
-                type="text"
+                type="email"
                 name="email"
                 placeholder="email"
                 className="input input-bordered"
@@ -58,7 +64,7 @@ const Login = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="text"
+                type="password"
                 name="pass"
                 placeholder="password"
                 className="input input-bordered"
@@ -95,7 +101,10 @@ const Login = () => {
             >
               Google
             </button>
-            <button className="btn btn-outline btn-info btn-xs sm:btn-sm md:btn-md">
+            <button
+              onClick={githubHandle}
+              className="btn btn-outline btn-info btn-xs sm:btn-sm md:btn-md"
+            >
               Git-Hub
             </button>
           </div>

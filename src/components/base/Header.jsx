@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log(user);
   const handleLogOut = () => {
     logOut()
       .then(() => {})
@@ -75,7 +76,23 @@ const Header = () => {
                 <button onClick={handleLogOut}>LogOut</button>
               </li>
               <li>
-                <Activelink>{user.email}</Activelink>
+                <Activelink>
+                  {user.photoURL && (
+                    <>
+                      <span>
+                        <div className="avatar online inline">
+                          <div className="w-7 rounded-full overflow-hidden">
+                            <img src={user.photoURL} />
+                          </div>
+                        </div>
+                      </span>
+                    </>
+                  )}
+
+                  <span>
+                    {user.displayName == null ? user.email : user.displayName}
+                  </span>
+                </Activelink>
               </li>
             </>
           ) : (

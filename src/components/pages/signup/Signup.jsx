@@ -18,6 +18,9 @@ const Signup = () => {
     createUser(email, pass)
       .then((userCredential) => {
         const user = userCredential.user;
+        user.displayName = userName;
+        user.photoURL = img;
+
         form.reset();
       })
       .catch((error) => {
