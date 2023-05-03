@@ -1,8 +1,8 @@
 import React from "react";
-import ItmData from "./ItmData";
+import RecipiesItm from "./RecipiesItm";
 import { Link } from "react-router-dom";
 
-const Items = ({ recipies }) => {
+const RecipiesSection = ({ recipies }) => {
   const ShowRecipies = recipies.slice(0, 4);
   return (
     <div className="mb-5">
@@ -11,16 +11,16 @@ const Items = ({ recipies }) => {
       </h1>
       <div className="grid grid-cols-4 gap-2">
         {ShowRecipies.map((itm) => (
-          <ItmData itms={itm} key={itm.recipe_id} />
+          <RecipiesItm itms={itm} key={itm.recipe_id} />
         ))}
       </div>
       <div className="text-center mt-5">
         <Link to="/itms">
-          <button className="btn btn-primary text-xl">Show All</button>
+          <button className="btn btn-sm btn-primary text-lg">Show All</button>
         </Link>
       </div>
     </div>
   );
 };
 
-export default Items;
+export default RecipiesSection;

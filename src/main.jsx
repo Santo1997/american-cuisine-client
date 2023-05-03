@@ -14,6 +14,7 @@ import Blog from "./components/pages/blog/Blog.jsx";
 import { chefsAndRecipies } from "./components/loader/DataLoader.js";
 import AuthProvider from "./providers/AuthProvider.jsx";
 import PrivateRoutes from "./components/routes/PrivateRoutes.jsx";
+import Chefs from "./components/pages/chefs/Chefs.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         element: <Itms />,
       },
       {
+        path: "/chefs",
+        element: <Chefs />,
+      },
+      {
         path: "/blog",
         element: <Blog />,
       },
@@ -40,14 +45,6 @@ const router = createBrowserRouter([
         loader: ({ params }) => params.id,
       },
       {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/signup",
-        element: <Signup />,
-      },
-      {
         path: "/chef_details/:id",
         element: (
           <PrivateRoutes>
@@ -55,6 +52,14 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) => params.id,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
     ],
   },

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import Slider from "./Slider";
-import Items from "./Items";
-import Chef from "./Chef";
+import SliderSection from "./SliderSection";
+import RecipiesSection from "./RecipiesSection";
+import ChefSection from "./ChefSection";
 import FilterCart from "../../layouts/FilterCart";
 import { ChefContext, RecipeContext } from "../../../App";
 import RecentItm from "./RecentItm";
@@ -14,9 +14,9 @@ const Home = () => {
 
   return (
     <div>
-      <Slider />
-      <Chef chefData={chefData} />
-      <Items recipies={recipies} />
+      <SliderSection />
+      <ChefSection chefData={chefData} />
+      <RecipiesSection recipies={recipies} />
       <div className="grid grid-cols-2 gap-2">
         <div>
           <h1 className="text-3xl m-5 w-1/4 font-bold border-b-2 border-green-500">

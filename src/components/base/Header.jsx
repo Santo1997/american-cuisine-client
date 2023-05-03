@@ -69,6 +69,9 @@ const Header = () => {
             <Activelink to="/itms">Items</Activelink>
           </li>
           <li>
+            <Activelink to="/chefs">Chefs</Activelink>
+          </li>
+          <li>
             <Activelink to="/blog">Blog</Activelink>
           </li>
 

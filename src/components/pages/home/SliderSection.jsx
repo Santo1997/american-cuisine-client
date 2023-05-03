@@ -1,6 +1,6 @@
 import React from "react";
 
-const Slider = () => {
+const SliderSection = () => {
   let img =
     "https://thumbs.dreamstime.com/b/spices-open-recipe-book-space-text-selection-cooking-blank-pages-53759813.jpg";
   return (
@@ -39,4 +39,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default SliderSection;

@@ -7,9 +7,9 @@ const ChefData = (props) => {
   let imgs =
     "https://nationaltoday.com/wp-content/uploads/2021/07/shutterstock_1518533924-min.jpg";
   return (
-    <div className="hero  bg-base-200 h-fit p-5 ">
-      <div className="hero-content flex-col lg:flex-row-reverse p-0 h-40">
-        <img src={imgs} className="w-fit h-full" />
+    <div className="hero  bg-base-200  h-48 rounded-e-xl ">
+      <div className="hero-content flex-col lg:flex-row-reverse p-0 h-48">
+        <img src={imgs} className="w-fit h-full rounded-e-xl" />
         <div>
           <h1 className="text-2xl font-bold">{name}</h1>
           <ul className="list-disc list-inside my-4">

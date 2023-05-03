@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ItmData = (props) => {
+const RecipiesItm = (props) => {
   const { recipe_id, image_url, name, details, rating } = props.itms;
 
   let img =
@@ -28,4 +28,4 @@ const ItmData = (props) => {
   );
 };
 
-export default ItmData;
+export default RecipiesItm;
