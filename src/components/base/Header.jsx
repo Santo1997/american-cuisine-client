@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import Activelink from "./Activelink";
+import { AuthContext } from "../../providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="navbar bg-base-100 border-b-2 border-green-500">
       <div className="navbar-start">
@@ -43,7 +53,9 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-4xl">Chef Site</a>
+        <h1 className="btn btn-ghost normal-case text-4xl">
+          <Link to={"/"}>Chef Site</Link>
+        </h1>
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -56,12 +68,26 @@ const Header = () => {
           <li>
             <Activelink to="/blog">Blog</Activelink>
           </li>
-          <li>
-            <Activelink to="/login">Login</Activelink>
-          </li>
-          <li>
-            <Activelink to="/signUp">SignUp</Activelink>
-          </li>
+
+          {user ? (
+            <>
+              <li>
+                <button onClick={handleLogOut}>LogOut</button>
+              </li>
+              <li>
+                <Activelink>{user.email}</Activelink>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Activelink to="/login">Login</Activelink>
+              </li>
+              <li>
+                <Activelink to="/signUp">SignUp</Activelink>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>
