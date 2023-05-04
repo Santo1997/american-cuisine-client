@@ -16,12 +16,8 @@ const Header = () => {
       });
   };
   return (
-    <div className="relative">
-      <div className="fixed top-0 left-0 z-50 bg-slate-300 w-full text-center lg:text-left p-5 lg:px-10 text-4xl text-green-600 font-bold">
-        <h1>American Cuisine</h1>
-      </div>
-
-      <div className="navbar  bg-green-600 text-white  font-bold mt-20">
+    <>
+      <div className="navbar  bg-green-600 text-white  font-bold">
         <div className="navbar-start">
           <div className=" dropdown bg-green-600">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -138,7 +134,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
