@@ -17,9 +17,9 @@ const Home = () => {
       <SliderSection />
       <ChefSection chefData={chefData} />
       <RecipiesSection recipies={recipies} />
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid lg:grid-cols-2 gap-5">
         <div>
-          <h1 className="text-3xl m-5 w-1/4 font-bold border-b-2 border-green-500">
+          <h1 className="text-3xl m-5 w-1/4 font-bold border-b-2 text-green-500 border-green-500">
             Recent
           </h1>
           <div className="grid gap-2">
@@ -31,6 +31,7 @@ const Home = () => {
             ))}
           </div>
         </div>
+
         <FilterCart />
       </div>
     </div>

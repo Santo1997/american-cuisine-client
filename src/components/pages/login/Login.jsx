@@ -45,34 +45,40 @@ const Login = () => {
   };
 
   return (
-    <div className="hero min-h-[calc(100vh-300px)] bg-base-200 ">
-      <div className="hero-content flex-col w-3/6">
+    <div className="hero min-h-[calc(100vh-300px)] text-black">
+      <div className="hero-content flex-col w-full lg:w-3/6">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold mb-10">Login now!</h1>
+          <h1 className="text-5xl font-bold mb-10 text-green-700">
+            Login now!
+          </h1>
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
           <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text text-blue-700 text-lg font-bold">
+                  Email:
+                </span>
               </label>
               <input
                 type="email"
                 name="email"
                 placeholder="email"
-                className="input input-bordered"
+                className="input input-bordered bg-slate-200 border-green-500 setFocus "
                 required
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text text-blue-700 text-lg font-bold">
+                  Password:
+                </span>
               </label>
               <input
                 type="password"
                 name="pass"
                 placeholder="password"
-                className="input input-bordered"
+                className="input input-bordered bg-slate-200 border-green-500 setFocus"
                 required
               />
               {err && (
@@ -91,24 +97,24 @@ const Login = () => {
                 Login
               </button>
             </div>
-            <p>
+            <p className="text-sm">
               Create an account?
-              <span className="ms-1 underline hover:text-red-500">
+              <span className="ms-1 underline text-blue-700 hover:text-red-500">
                 <Link to="/signUp">Signup</Link>
               </span>
             </p>
           </form>
-          <div className="divider">OR</div>
+          <div className="divider">Or continue with</div>
           <div className=" text-center mb-10">
             <button
               onClick={googleHandle}
-              className="btn btn-outline btn-success btn-xs sm:btn-sm md:btn-md me-5"
+              className="btn btn-outline btn-success btn-xs btn-md me-5"
             >
               Google
             </button>
             <button
               onClick={githubHandle}
-              className="btn btn-outline btn-info btn-xs sm:btn-sm md:btn-md"
+              className="btn btn-outline btn-info btn-xs btn-md"
             >
               Git-Hub
             </button>

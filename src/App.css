@@ -1,6 +1,12 @@
 #root {
   width: 100%;
   margin: 0 auto;
+  
+  @apply bg-slate-200;
+}
+
+.setFocus {
+  @apply focus:border-blue-700 focus:outline-none focus:text-blue-700 
 }
 
 button {

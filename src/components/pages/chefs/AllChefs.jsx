@@ -4,28 +4,26 @@ import { Link } from "react-router-dom";
 const AllChefs = (props) => {
   const { id, name, img, experience, num_recipes, likes } = props.allchefs;
 
-  const [isFavorited, setIsFavorited] = useState(false);
-
   return (
-    <div className="card w-full bg-base-100 shadow-xl h-96 border">
+    <div className="card w-full  shadow-xl h-96 text-black">
       <figure>
         <img src={img} className="h-full w-full" />
       </figure>
       <div className="card-body p-3">
         <div>
-          <h1 className="text-2xl font-bold">{name}</h1>
+          <h1 className="text-2xl font-bold text-blue-700">{name}</h1>
           <ul className="list-disc list-inside ">
             <li>
               Years of experience:
-              <span className="text-green-500 font-bold"> {experience}</span>
+              <span className="text-blue-700 font-bold"> {experience}</span>
             </li>
             <li>
               Numbers of recipes:
-              <span className="text-green-500 font-bold"> {num_recipes}</span>
+              <span className="text-blue-700 font-bold"> {num_recipes}</span>
             </li>
             <li>
               Likes:
-              <span className="text-green-500 font-bold"> {likes}</span>
+              <span className="text-blue-700 font-bold"> {likes}</span>
             </li>
           </ul>
           <div className="text-center mt-5">

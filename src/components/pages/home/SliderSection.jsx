@@ -3,7 +3,7 @@ import React from "react";
 const SliderSection = () => {
   return (
     <>
-      <div className="h-[calc(100vh-35vh)]">
+      <div className="lg:h-[calc(100vh-35vh)]">
         <div className="carousel h-full">
           <div id="item1" className="carousel-item w-full">
             <img

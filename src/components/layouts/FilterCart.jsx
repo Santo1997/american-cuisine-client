@@ -19,11 +19,11 @@ const FilterCart = () => {
       : recipies.filter((rec) => rec.popularity === recipeType);
 
   return (
-    <div className="col-span-1">
-      <h1 className="text-3xl m-5 w-2/4 font-bold border-b-2 border-green-500">
+    <div className=" lg:col-span-1 ">
+      <h1 className="text-3xl m-5 lg:w-2/4 font-bold border-b-2 text-green-500 border-green-500">
         Category
       </h1>
-      <div className="text-center mb-5">
+      <div className="text-center mb-5 w-11/12 mx-auto ">
         {location.pathname !== "/" && (
           <button
             onClick={() => handleFilter("Recent")}
@@ -46,7 +46,7 @@ const FilterCart = () => {
           Random
         </button>
       </div>
-      <div className="grid gap-2">
+      <div className="grid gap-2 p-2 rounded-md bg-gray-300">
         {filteredData.map((itm) => (
           <FilterData recipies={itm} key={itm.recipe_id} />
         ))}

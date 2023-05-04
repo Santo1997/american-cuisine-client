@@ -26,39 +26,39 @@ const ChefDetails = () => {
 
   return (
     <div>
-      <div className="hero place-items-start bg-base-200 w-fit p-5">
-        <div className="hero-content flex-col lg:flex-row items-start">
-          <LazyLoad height={400} width={600} threshold={0.95} offset={300}>
+      <div className="hero place-items-start shadow-2xl rounded-md text-black w-fit lg:p-5">
+        <div className="hero-content flex-col lg:flex-row-reverse  items-center">
+          <LazyLoad threshold={0.95} offset={300}>
             <img src={img} data-src={img} />
           </LazyLoad>
-          <div>
-            <h1 className="text-3xl font-bold">{name}</h1>
-            <ul className="list-disc list-inside ms-10 my-4">
+          <div className="lg:me-10">
+            <h1 className="text-3xl font-bold text-blue-700">{name}</h1>
+            <ul className="list-disc list-inside ms-8 my-4">
               <li>
                 Years of experience:
-                <span className="text-green-500 font-bold"> {experience}</span>
+                <span className="text-blue-700 font-bold"> {experience}</span>
               </li>
               <li>
                 Numbers of recipes:
-                <span className="text-green-500 font-bold"> {num_recipes}</span>
+                <span className="text-blue-700 font-bold"> {num_recipes}</span>
               </li>
               <li>
                 Likes:
-                <span className="text-green-500 font-bold"> {likes}</span>
+                <span className="text-blue-700 font-bold"> {likes}</span>
               </li>
             </ul>
           </div>
         </div>
       </div>
 
-      <article>
-        <h1 className="text-2xl underline">About</h1>
+      <article className="text-black">
+        <h1 className="text-2xl underline my-5 text-green-500">About:</h1>
         <p className="ms-2">{details}</p>
       </article>
 
       <div className="mb-5">
-        <h1 className="text-2xl underline my-5">Recipies</h1>
-        <div className="grid grid-cols-1 gap-2">
+        <h1 className="text-2xl underline my-5 text-green-500">Recipies:</h1>
+        <div className="grid grid-cols-1 gap-3">
           {loader ? (
             <>
               <progress className="progress w-56"></progress>

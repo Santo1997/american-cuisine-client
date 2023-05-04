@@ -30,57 +30,68 @@ const Signup = () => {
       });
   };
   return (
-    <div className="hero min-h-[calc(100vh-300px)] bg-base-200 ">
-      <div className="hero-content flex-col w-4/5">
+    <div className="hero min-h-[calc(100vh-300px)]  text-black">
+      <div className="hero-content flex-col w-full lg:w-4/5">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold mb-10">Register now!</h1>
+          <h1 className="text-5xl font-bold mb-10 text-green-700">
+            Register now!
+          </h1>
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
           <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Username</span>
+                <span className="label-text text-blue-700 text-lg font-bold ">
+                  Username:
+                </span>
               </label>
               <input
                 type="text"
                 name="username"
                 placeholder="Username"
-                className="input input-bordered"
+                className="input input-bordered bg-slate-200 border-green-500 setFocus"
+                required
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text text-blue-700 text-lg font-bold">
+                  Email:
+                </span>
               </label>
               <input
                 type="email"
                 name="email"
                 placeholder="email"
-                className="input input-bordered"
+                className="input input-bordered bg-slate-200 border-green-500 setFocus"
                 required
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text text-blue-700 text-lg font-bold">
+                  Password:
+                </span>
               </label>
               <input
                 type="password"
                 name="password"
                 placeholder="password"
-                className="input input-bordered"
+                className="input input-bordered bg-slate-200 border-green-500 setFocus"
                 required
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Photo URL</span>
+                <span className="label-text text-blue-700 text-lg font-bold">
+                  Photo URL:
+                </span>
               </label>
               <input
                 type="text"
                 name="photo"
                 placeholder="Photo URL"
-                className="input input-bordered"
+                className="input input-bordered bg-slate-200 border-green-500 setFocus"
                 required
               />
 
@@ -93,9 +104,9 @@ const Signup = () => {
             <div className="form-control m-5 ">
               <button className="btn btn-primary">Login</button>
             </div>
-            <p>
+            <p className="text-sm">
               Already an account?
-              <span className="ms-1 underline hover:text-red-500">
+              <span className="ms-1 underline text-blue-700 hover:text-red-500">
                 <Link to="/login">Signin</Link>
               </span>
             </p>

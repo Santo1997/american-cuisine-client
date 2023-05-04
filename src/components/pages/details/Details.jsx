@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 const Details = () => {
   let recipeId = useParams().id;
   const [recipe, setRecipe] = useState("");
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     fetch(
@@ -13,13 +14,22 @@ const Details = () => {
     )
       .then((res) => res.json())
       .then((data) => setRecipe(data));
+    setLoader(false);
   }, []);
 
   return (
-    <div className="grid grid-cols-3 gap-2">
-      <DetailsInfo recipe={recipe} />
-      <FilterCart />
-    </div>
+    <>
+      {loader ? (
+        <progress className="progress w-56"></progress>
+      ) : (
+        <>
+          <div className="grid lg:grid-cols-3 gap-2">
+            <DetailsInfo recipe={recipe} />
+            <FilterCart />
+          </div>
+        </>
+      )}
+    </>
   );
 };
 

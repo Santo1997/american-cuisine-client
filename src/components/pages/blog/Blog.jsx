@@ -3,13 +3,13 @@ import React from "react";
 const Blog = () => {
   return (
     <div>
-      <div className="lg:my-14">
+      <div className="lg:my-14 text-black">
         <article className="mx-5 lg:mx-10 my-5">
-          <h1 className="text-2xl mb-2 text-black">
+          <h1 className="text-2xl text-blue-700 mb-2 ">
             1. The differences between uncontrolled and controlled components.
           </h1>
           <p className="text-base ms-8">
-            In React, a <strong className="text-gray-700"> controlled </strong>
+            In React, a <strong className="text-gray-700"> ontrolled </strong>
             element is an element that is controlled by the reaction state,
             while an <strong className="text-gray-700"> Uncontrolled </strong>
             element is an element that maintains its own internal state. <br />
@@ -22,7 +22,7 @@ const Blog = () => {
           </p>
         </article>
         <article className="mx-5 lg:mx-10 my-5">
-          <h1 className="text-2xl mb-2 text-black">
+          <h1 className="text-2xl text-blue-700 mb-2 ">
             2. How to validate React props using PropTypes?
           </h1>
           <p className="text-base ms-8">
@@ -40,12 +40,12 @@ const Blog = () => {
           </p>
         </article>
         <article className="mx-5 lg:mx-10 my-5">
-          <h1 className="text-2xl mb-2 text-black">
+          <h1 className="text-2xl text-blue-700 mb-2 ">
             3. The difference between nodejs and express js.
           </h1>
           <p className="text-base ms-8">
             An extension of JavaScript,
-            <strong className="text-gray-700">NodeJS</strong> is an open-source
+            <strong className="text-gray-700"> NodeJS</strong> is an open-source
             server-side runtime environment built around the NodeJS language.
             Using a single-threaded approach to web loading and asynchronous
             programming, the framework has achieved great success in being
@@ -58,7 +58,7 @@ const Blog = () => {
           </p>
         </article>
         <article className="mx-5 lg:mx-10 my-5">
-          <h1 className="text-2xl mb-2 text-black">
+          <h1 className="text-2xl text-blue-700 mb-2 ">
             4. What is a custom hook, and why will you create a custom hook?
           </h1>
           <p className="text-base ms-8">

@@ -5,19 +5,21 @@ const RecentItm = (props) => {
   const { recipe_id, image_url, name, details, rating } = props.recentRecipe;
 
   return (
-    <div className="card lg:card-side bg-base-100 shadow-xl h-40">
+    <div className="card lg:card-side  shadow-md border text-black border-blue-700 lg:h-40">
       <figure>
         <img src={image_url} className="w-full h-full" />
       </figure>
       <div className="card-body p-2 relative w-full">
-        <h2 className="card-title">{name}</h2>
-        <p className="inline-block w-fit absolute top-3 right-5">
-          Rating: <span className=" text-green-500">{rating}</span>
+        <h2 className="card-title text-blue-700">{name}</h2>
+        <p className="inline-block w-fit absolute top-3 right-10">
+          Rating: <span className=" text-blue-700">{rating}</span>
         </p>
         <p>{details}</p>
-        <div className="card-actions justify-end">
+        <div className="card-actions justify-end relative">
           <Link to={`/details/${recipe_id}`}>
-            <button className="btn btn-primary btn-sm">Details</button>
+            <button className="btn btn-primary btn-sm lg:absolute bottom-2 right-3">
+              Details
+            </button>
           </Link>
         </div>
       </div>
