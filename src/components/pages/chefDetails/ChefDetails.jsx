@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import RecepiesInfo from "./RecepiesInfo";
 import { RecipeContext } from "../../../App";
-import { toast } from "react-hot-toast";
+import LazyLoad from "react-lazy-load";
 
 const ChefDetails = () => {
   let chefId = useParams().id;
@@ -28,7 +28,9 @@ const ChefDetails = () => {
     <div>
       <div className="hero place-items-start bg-base-200 w-fit p-5">
         <div className="hero-content flex-col lg:flex-row items-start">
-          <img src={img} className="w-fit h-96" />
+          <LazyLoad height={400} width={600} threshold={0.95} offset={300}>
+            <img src={img} data-src={img} />
+          </LazyLoad>
           <div>
             <h1 className="text-3xl font-bold">{name}</h1>
             <ul className="list-disc list-inside ms-10 my-4">

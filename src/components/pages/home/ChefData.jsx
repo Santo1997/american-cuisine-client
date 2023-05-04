@@ -1,4 +1,5 @@
 import React from "react";
+import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
 
 const ChefData = (props) => {
@@ -7,7 +8,10 @@ const ChefData = (props) => {
   return (
     <div className="hero  bg-base-200 w-fit h-52 rounded-s-xl ">
       <div className="hero-content  flex-col lg:flex-row-reverse gap-0 p-0 h-full">
-        <img src={img} className="w-52 h-full" />
+        <LazyLoad height={200} width={250} threshold={0.95} offset={300}>
+          <img src={img} data-src={img} className="w-52 h-full" />
+        </LazyLoad>
+
         <div className="w-full p-2">
           <h1 className="text-2xl font-bold">{name}</h1>
           <ul className="list-disc list-inside my-4">

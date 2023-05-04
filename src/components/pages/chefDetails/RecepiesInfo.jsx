@@ -1,14 +1,14 @@
-import { space } from "postcss/lib/list";
 import React, { useState } from "react";
+import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const RecepiesInfo = (props) => {
-  const [isFavorited, setIsFavorited] = useState(false);
+  const [isFavourite, setIsFavourite] = useState(null);
 
-  const addFav = () => {
-    setIsFavorited(true);
+  function addFavourite(id) {
+    setIsFavourite(id);
     toast.success("Added As Favourite");
-  };
+  }
 
   const {
     recipe_id,
@@ -29,11 +29,16 @@ const RecepiesInfo = (props) => {
         <h2 className="card-title">
           {name}
           <div className="badge badge-secondary"> rating: {rating}</div>
-          <button className="badge badge-secondary">
-            {isFavorited ? <span>Added</span> : <span>Add</span>}
+          <button
+            disabled={isFavourite === recipe_id}
+            onClick={() => addFavourite(recipe_id)}
+            className="badge badge-secondary"
+          >
+            {isFavourite === recipe_id ? "Added" : "Add Favourite"}
           </button>
         </h2>
-        <span>{details}</span>
+
+        <p>{details}</p>
 
         <div className="grid grid-cols-3 items-start">
           <ul className="list-disc list-inside ">
@@ -43,7 +48,7 @@ const RecepiesInfo = (props) => {
             ))}
           </ul>
           <p className="col-span-2 ">
-            <h3 className="text-xl underline inline">Cooking method:</h3>
+            <span className="text-xl underline inline">Cooking method:</span>
             <br />
             <span> {cooking_method}</span>
           </p>
