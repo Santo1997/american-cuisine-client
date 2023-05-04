@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ChefData from "./ChefData";
-import { Link } from "react-router-dom";
 
 const ChefSection = (props) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -10,8 +9,6 @@ const ChefSection = (props) => {
       setIsLoading(false);
     }
   }, []);
-
-  const showChefs = props.chefData.slice(0, 3);
 
   return (
     <div className="mb-5">
@@ -23,17 +20,12 @@ const ChefSection = (props) => {
       ) : (
         <>
           <div className="grid lg:grid-cols-3 gap-2">
-            {showChefs.map((chef) => (
+            {props.chefData.map((chef) => (
               <ChefData chef={chef} key={chef.id} />
             ))}
           </div>
         </>
       )}
-      <div className="text-center mt-5">
-        <Link to="/chefs">
-          <button className="btn btn-sm btn-primary text-lg">Show All</button>
-        </Link>
-      </div>
     </div>
   );
 };
