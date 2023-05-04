@@ -6,11 +6,11 @@ const ChefData = (props) => {
   const { id, name, img, experience, num_recipes, likes } = props.chef;
 
   return (
-    <div className="hero border-2 text-black border-blue-700 lg:w-fit lg:h-52 rounded-s-xl ">
+    <div className="hero border-2 text-black border-blue-700 lg:w-fit lg:h-52 overflow-hidden rounded-s-xl ">
       <div className="flex  flex-col lg:flex-row-reverse gap-0 p-0 h-full">
         {/* height={200} width={250} */}
         <LazyLoad threshold={0.95} offset={300}>
-          <img src={img} data-src={img} className="w-96  h-full" />
+          <img src={img} data-src={img} className=" lg:w-96  h-full" />
         </LazyLoad>
         <div className="w-full p-2">
           <h1 className="text-2xl font-bold text-blue-900">{name}</h1>

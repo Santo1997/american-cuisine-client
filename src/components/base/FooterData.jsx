@@ -6,9 +6,9 @@ const FooterData = (props) => {
 
   return (
     <>
-      <div className="card lg:card-side h-fit w-fit p-1 text-white rounded-none last:border-t-2 last:pt-3 ">
+      <div className="card  lg:card-side h-fit mx-auto lg:w-fit p-1 text-white rounded-none last:border-t-2 last:pt-3 ">
         <figure className="me-2">
-          <img src={image_url} className="w-fit h-16" />
+          <img src={image_url} className="w-fit h-24 lg:h-16" />
         </figure>
         <div className="card-body w-full p-1">
           <Link to={`/details/${recipe_id}`}>

@@ -15,7 +15,6 @@ const Blog = () => {
                 className="ms-2 underline hover:text-red-500"
                 onClick={toPdf}
               >
-                {" "}
                 Click Here
               </button>
             </h1>

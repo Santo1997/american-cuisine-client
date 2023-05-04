@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className="footer p-10 bg-black text-base-content">
       <div className="bg-black">
         <h1 className="text-4xl text-green-500">American Cuisine</h1>
-        <p className="w-96">
+        <p className="lg:w-96">
           ACME Industries Ltd.
           <br />
           American cuisine is a diverse and varied culinary tradition that
@@ -23,8 +23,8 @@ const Footer = () => {
           have developed over time.
         </p>
       </div>
-      <div className="bg-black">
-        <span className="footer-title w-full capitalize text-xl text-green-500">
+      <div className="bg-black w-full">
+        <span className="footer-title  w-full capitalize text-xl text-green-500">
           Popular Items
         </span>
         {shwItm.map((itm) => (
@@ -33,14 +33,14 @@ const Footer = () => {
       </div>
 
       <div>
-        <span className="footer-title w-full capitalize text-xl text-green-500">
+        <span className="footer-title w-full capitalize text-xl  text-green-500">
           News
         </span>
-        <div className="card lg:card-side h-fit w-fit p-1 text-white rounded-none last:border-t-2 last:pt-3 ">
+        <div className="card lg:card-side mx-auto lg:h-fit w-fit p-1 text-white rounded-none last:border-t-2 last:pt-3 ">
           <figure className="me-2">
             <img
               src="https://i.ibb.co/qyHvvRM/hamburger-with-fries.jpg"
-              className="w-fit h-16"
+              className="w-fit h-24 lg:h-16"
             />
           </figure>
           <div className="card-body w-full p-1">
@@ -54,11 +54,11 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="card lg:card-side h-fit w-fit p-1 text-white rounded-none last:border-t-2 last:pt-3 ">
+        <div className="card lg:card-side mx-auto h-fit w-fit p-1 text-white rounded-none last:border-t-2 last:pt-3 ">
           <figure className="me-2">
             <img
               src="https://i.ibb.co/d5zTpNG/main-header.jpg"
-              className="w-fit h-16"
+              className="w-fit h-24 lg:h-16"
             />
           </figure>
           <div className="card-body w-full p-1">
@@ -69,7 +69,7 @@ const Footer = () => {
             </Link>
 
             <p className="text-gray-500">
-              Chicken pieces marinated in buttermilk.....
+              Chicken pieces marinated in butter.....
             </p>
           </div>
         </div>

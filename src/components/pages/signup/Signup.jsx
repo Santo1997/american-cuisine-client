@@ -1,10 +1,13 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Signup = () => {
   const { user, createUser } = useContext(AuthContext);
   const [err, setErr] = useState("");
+  const navigate = useNavigate();
+
+  const from = "/";
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -20,8 +23,8 @@ const Signup = () => {
         const user = userCredential.user;
         user.displayName = userName;
         user.photoURL = img;
-
         form.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorCode = error.code;
