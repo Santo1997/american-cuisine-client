@@ -2,15 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const FavData = (props) => {
-  const {
-    recipe_id,
-    image_url,
-    name,
-    details,
-    rating,
-    ingredients,
-    cooking_method,
-  } = props.itm;
+  const { recipe_id, image_url, name, details, rating } = props.itm;
+  console.log(props.removeRecipe);
 
   return (
     <div className="hero rounded-lg shadow-2xl w-full">
@@ -24,6 +17,12 @@ const FavData = (props) => {
 
           <p className="pb-6"> {details}</p>
           <div className="card-actions justify-end">
+            <button
+              onClick={() => props.removeRecipe(recipe_id)}
+              className="btn btn-primary"
+            >
+              Remove
+            </button>
             <Link to={`/details/${recipe_id}`}>
               <button className="btn btn-primary">Details</button>
             </Link>

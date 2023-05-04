@@ -14,6 +14,12 @@ const addToCart = (id) => {
   return true;
 };
 
+const removeToCart = (key) => {
+  let newCart = getStrdCart();
+  delete newCart[key];
+  localStorage.setItem("recipies-cart", JSON.stringify(newCart));
+}
+
 const getStrdCart = () => {
   let strCart = {};
   const storedCart = localStorage.getItem("recipies-cart");
@@ -36,4 +42,4 @@ const loadStrData = (params) => {
   return cartArr;
 };
 
-export { addToCart, getStrdCart, loadStrData };
+export { addToCart,removeToCart, getStrdCart, loadStrData };
