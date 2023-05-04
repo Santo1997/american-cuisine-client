@@ -46,9 +46,13 @@ const Header = () => {
               <li>
                 <Activelink to="/itms">Items</Activelink>
               </li>
-              <li>
-                <Activelink to="/chefs">Chefs</Activelink>
-              </li>
+              {user && (
+                <>
+                  <li>
+                    <Activelink to="/favourite">Favourite</Activelink>
+                  </li>
+                </>
+              )}
               <li>
                 <Activelink to="/blog">Blog</Activelink>
               </li>
@@ -73,7 +77,7 @@ const Header = () => {
               )}
             </ul>
           </div>
-          <h1 className="btn btn-ghost normal-case text-xl">
+          <h1 className="btn btn-ghost normal-case text-3xl">
             <Link to={"/"}>American Cuisine</Link>
           </h1>
         </div>
@@ -85,9 +89,14 @@ const Header = () => {
             <li>
               <Activelink to="/itms">Items</Activelink>
             </li>
-            <li>
-              <Activelink to="/chefs">Chefs</Activelink>
-            </li>
+            {user && (
+              <>
+                <li>
+                  <Activelink to="/favourite">Favourite</Activelink>
+                </li>
+              </>
+            )}
+
             <li>
               <Activelink to="/blog">Blog</Activelink>
             </li>

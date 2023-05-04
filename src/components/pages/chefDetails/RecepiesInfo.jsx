@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { addToCart } from "../../../utilities/fakeDB";
 
 const RecepiesInfo = (props) => {
   const [isFavourite, setIsFavourite] = useState(null);
@@ -16,7 +17,10 @@ const RecepiesInfo = (props) => {
 
   function addFavourite(id) {
     setIsFavourite(id);
-    toast.success("Added As Favourite");
+    const addCart = addToCart(id);
+    if (addCart) {
+      toast.success("Added As Favourite");
+    }
   }
 
   const {
