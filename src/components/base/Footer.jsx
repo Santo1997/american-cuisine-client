@@ -32,11 +32,11 @@ const Footer = () => {
         ))}
       </div>
 
-      <div>
+      <div className="w-full">
         <span className="footer-title w-full capitalize text-xl  text-green-500">
           News
         </span>
-        <div className="card lg:card-side mx-auto lg:h-fit w-fit p-1 text-white rounded-none last:border-t-2 last:pt-3 ">
+        <div className="card lg:card-side  mx-auto  lg:h-fit  p-1 text-white rounded-none last:border-t-2 last:pt-3 ">
           <figure className="me-2">
             <img
               src="https://i.ibb.co/qyHvvRM/hamburger-with-fries.jpg"
@@ -54,7 +54,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="card lg:card-side mx-auto h-fit w-fit p-1 text-white rounded-none last:border-t-2 last:pt-3 ">
+        <div className="card lg:card-side  mx-auto  h-fit  p-1 text-white rounded-none last:border-t-2 last:pt-3 ">
           <figure className="me-2">
             <img
               src="https://i.ibb.co/d5zTpNG/main-header.jpg"
