@@ -23,7 +23,7 @@ const Header = () => {
 
       <div className="navbar  bg-green-600 text-white  font-bold mt-20">
         <div className="navbar-start">
-          <div className="dropdown bg-green-600">
+          <div className=" dropdown bg-green-600">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact bg-slate bg-green-600 dropdown-content mt-3 p-2 shadow rounded-box w-52"
+              className="menu menu-compact bg-slate bg-green-600 dropdown-content mt-3 p-2 shadow rounded-box w-52 overflow-hidden"
             >
               <li>
                 <Activelink to="/">Home</Activelink>
@@ -63,8 +63,6 @@ const Header = () => {
                   </li>
                   <li className="hover:disabled">
                     {user.displayName !== null ? user.displayName : user.email}
-
-                    {user.displayName == null && user.email}
                   </li>
                 </>
               ) : (
