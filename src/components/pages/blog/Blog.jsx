@@ -1,9 +1,28 @@
 import React from "react";
+import ReactToPdf from "react-to-pdf";
+
+const ref = React.createRef();
 
 const Blog = () => {
   return (
     <div>
-      <div className="lg:my-14 text-black">
+      <ReactToPdf targetRef={ref} filename="blog.pdf">
+        {({ toPdf }) => (
+          <>
+            <h1 className="text-2xl text-blue-700 w-fit mx-auto p-5 bg-gray-400 rounded-md">
+              Need to download?
+              <button
+                className="ms-2 underline hover:text-red-500"
+                onClick={toPdf}
+              >
+                {" "}
+                Click Here
+              </button>
+            </h1>
+          </>
+        )}
+      </ReactToPdf>
+      <div ref={ref} className="lg:my-10 text-black">
         <article className="mx-5 lg:mx-10 my-5">
           <h1 className="text-2xl text-blue-700 mb-2 ">
             1. The differences between uncontrolled and controlled components.
